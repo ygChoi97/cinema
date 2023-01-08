@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kgedu1d.cinema.movie.repository.MovieRepository">
+    <insert id="save">
+        INSERT INTO tbl_movieinfo
+        (movieCd, movieNm, movieNmEn, prdtYear, showTm, openDt, nations, genres, directors, actors, screeningType, plot, imgURL, showTypes, watchGradeNm)
+        VALUES
+        (#{movieCd}, #{movieNm}, #{movieNmEn}, #{prdtYear}, #{showTm}, #{openDt}, #{nations}, #{genres}, #{directors}, #{actors}, #{screeningType}, #{plot}, #{imgURL}, #{showTypes}, #{watchGradeNm})
+    </insert>
+
+    <delete id="remove">
+        DELETE FROM tbl_movieinfo
+        WHERE movieCd = #{movieCd}
+    </delete>
+
+    <select id="findOne" resultType="com.kgedu1d.cinema.movie.entity.Movie">
+        SELECT movieCd, movieNm, movieNmEn, prdtYear, showTm, openDt, nations, genres, directors, actors, screeningType, plot, imgURL, showTypes, watchGradeNm
+        FROM tbl_movieinfo
+        WHERE movieCd = #{movieCd}
+    </select>
+
+    <select id="findAll" resultType="com.kgedu1d.cinema.movie.entity.Movie">
+        SELECT movieCd, movieNm, movieNmEn, prdtYear, showTm, openDt, nations, genres, directors, actors, screeningType, plot, imgURL, showTypes, watchGradeNm
+        FROM tbl_movieinfo
+    </select>
+
+    <update id="modify">
+        UPDATE tbl_movieinfo
+        SET movieCd=#{movieCd}, movieNm=#{movieNm}, movieNmEn=#{movieNmEn}, prdtYear=#{prdtYear}, showTm=#{showTm}, openDt=#{openDt}, nations=#{nations}, genres=#{genres}, directors=#{directors}, actors=#{actors}, screeningType=#{screeningType}, plot=#{plot}, imgURL=#{imgURL}, showTypes=#{showTypes}, watchGradeNm=#{watchGradeNm}
+        WHERE movieCd=#{movieCd}
+    </update>
+</mapper>
