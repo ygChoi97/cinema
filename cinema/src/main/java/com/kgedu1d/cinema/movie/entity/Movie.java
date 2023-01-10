@@ -26,6 +26,7 @@ public class Movie {
     private String plot;            // 줄거리
     private String imgURL;          // 영화이미지
     private String showTypes;       // 상영형태
+    private String companys;        // 참여 영화사
     private String watchGradeNm;    // 관람등급 명칭
 
 //  private String typeNm;          // 영화유형명

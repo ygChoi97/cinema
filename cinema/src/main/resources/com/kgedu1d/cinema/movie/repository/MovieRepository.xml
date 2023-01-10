@@ -6,9 +6,9 @@
 <mapper namespace="com.kgedu1d.cinema.movie.repository.MovieRepository">
     <insert id="save">
         INSERT INTO tbl_movieinfo
-        (movieCd, movieNm, movieNmEn, prdtYear, showTm, openDt, nations, genres, directors, actors, screeningType, plot, imgURL, showTypes, watchGradeNm)
+        (movieCd, movieNm, movieNmEn, prdtYear, showTm, openDt, nations, genres, directors, actors, screeningType, plot, imgURL, showTypes, companys, watchGradeNm)
         VALUES
-        (#{movieCd}, #{movieNm}, #{movieNmEn}, #{prdtYear}, #{showTm}, #{openDt}, #{nations}, #{genres}, #{directors}, #{actors}, #{screeningType}, #{plot}, #{imgURL}, #{showTypes}, #{watchGradeNm})
+        (#{movieCd}, #{movieNm}, #{movieNmEn}, #{prdtYear}, #{showTm}, #{openDt}, #{nations}, #{genres}, #{directors}, #{actors}, #{screeningType}, #{plot}, #{imgURL}, #{showTypes}, #{companys}, #{watchGradeNm})
     </insert>
 
     <delete id="remove">
@@ -17,19 +17,19 @@
     </delete>
 
     <select id="findOne" resultType="com.kgedu1d.cinema.movie.entity.Movie">
-        SELECT movieCd, movieNm, movieNmEn, prdtYear, showTm, openDt, nations, genres, directors, actors, screeningType, plot, imgURL, showTypes, watchGradeNm
+        SELECT movieCd, movieNm, movieNmEn, prdtYear, showTm, openDt, nations, genres, directors, actors, screeningType, plot, imgURL, showTypes, companys, watchGradeNm
         FROM tbl_movieinfo
         WHERE movieCd = #{movieCd}
     </select>
 
     <select id="findAll" resultType="com.kgedu1d.cinema.movie.entity.Movie">
-        SELECT movieCd, movieNm, movieNmEn, prdtYear, showTm, openDt, nations, genres, directors, actors, screeningType, plot, imgURL, showTypes, watchGradeNm
+        SELECT movieCd, movieNm, movieNmEn, prdtYear, showTm, openDt, nations, genres, directors, actors, screeningType, plot, imgURL, showTypes, companys, watchGradeNm
         FROM tbl_movieinfo
     </select>
 
     <update id="modify">
         UPDATE tbl_movieinfo
-        SET movieCd=#{movieCd}, movieNm=#{movieNm}, movieNmEn=#{movieNmEn}, prdtYear=#{prdtYear}, showTm=#{showTm}, openDt=#{openDt}, nations=#{nations}, genres=#{genres}, directors=#{directors}, actors=#{actors}, screeningType=#{screeningType}, plot=#{plot}, imgURL=#{imgURL}, showTypes=#{showTypes}, watchGradeNm=#{watchGradeNm}
+        SET movieCd=#{movieCd}, movieNm=#{movieNm}, movieNmEn=#{movieNmEn}, prdtYear=#{prdtYear}, showTm=#{showTm}, openDt=#{openDt}, nations=#{nations}, genres=#{genres}, directors=#{directors}, actors=#{actors}, screeningType=#{screeningType}, plot=#{plot}, imgURL=#{imgURL}, showTypes=#{showTypes}, companys=#{companys}, watchGradeNm=#{watchGradeNm}
         WHERE movieCd=#{movieCd}
     </update>
 </mapper>

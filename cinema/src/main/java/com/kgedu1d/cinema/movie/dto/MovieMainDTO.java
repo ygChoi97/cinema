@@ -21,6 +21,7 @@ public class MovieMainDTO {
     private String plot;            // 줄거리
     private String imgURL;          // 영화이미지
     private String showTypes;       // 상영형태
+    private String companys;        // 참여 영화사
     private String watchGradeNm;    // 관람등급 명칭
     public MovieMainDTO(Movie movie) {
         movieCd = movie.getMovieCd();
@@ -37,6 +38,7 @@ public class MovieMainDTO {
         plot = movie.getPlot();
         imgURL = movie.getImgURL();
         showTypes = movie.getShowTypes();
+        companys = movie.getCompanys();
         watchGradeNm = movie.getWatchGradeNm();
     }
 }
